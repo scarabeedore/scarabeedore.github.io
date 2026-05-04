@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scarabée Doré | Haute Performance</title>
+    <title>Scarabée Doré | Clarté & Transformation</title>
+
     <style>
         :root {
             --gold: #D4AF37;
@@ -21,28 +22,23 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* --- 1. TITRES --- */
         h1 {
-            font-size: clamp(1.8rem, 6vw, 3rem);
-            margin: 60px 20px 10px 20px;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin: 60px 20px 15px;
             color: var(--gold);
-            font-weight: bold;
         }
 
         .subtitle {
             font-size: 1.2rem;
             font-style: italic;
-            margin-bottom: 30px;
-            max-width: 800px;
+            max-width: 700px;
             padding: 0 20px;
-            opacity: 0.8;
+            opacity: 0.9;
+            margin-bottom: 30px;
         }
 
-        /* --- 2. NAVIGATION --- */
         nav {
             display: flex;
             justify-content: center;
@@ -56,57 +52,77 @@
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 1.5px;
-            position: relative;
-            padding: 8px 12px;
-            transition: color 0.3s ease;
+            padding: 5px 10px;
+            transition: 0.3s;
         }
 
-        nav a:nth-child(1):hover { color: var(--rose); }
-        nav a:nth-child(2):hover { color: var(--gold); }
+        nav a:hover {
+            color: var(--gold);
+        }
 
-        /* --- 3. VIDÉO RÉDUITE (MOITIÉ) --- */
         .video-container {
-            width: 180px; /* Taille réduite de moitié */
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: center;
+            width: 120px;
+            margin-bottom: 30px;
         }
 
         video {
             width: 100%;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
-            border-radius: 15px;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
         }
 
-        /* --- 4. BOUTON --- */
         .cta-button {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 14px 35px;
             border: 1px solid var(--gold);
             color: var(--gold);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
+            font-size: 0.8rem;
             letter-spacing: 2px;
-            font-size: 0.9rem;
-            transition: all 0.4s ease;
             margin-bottom: 60px;
+            transition: 0.3s;
         }
 
         .cta-button:hover {
             background: var(--gold);
             color: var(--black);
         }
+
+        .section {
+            max-width: 800px;
+            padding: 40px 20px;
+        }
+
+        .section h2 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .offers {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .offer {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+        }
     </style>
 </head>
+
 <body>
 
     <h1>Tu n’es pas bloquée par hasard.</h1>
-    <p class="subtitle">Tu es bloquée parce que tu ne vois pas encore ce qui te retient.</p>
+
+    <p class="subtitle">
+        Tu es bloquée parce que tu ne vois pas encore ce qui te retient vraiment.
+    </p>
 
     <nav>
         <a href="#accueil">Accueil</a>
@@ -119,11 +135,52 @@
     <div class="video-container">
         <video autoplay loop muted playsinline preload="auto">
             <source src="video.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
         </video>
     </div>
 
-    <a href="#" class="cta-button">Travailler avec moi</a>
+    <a href="#accompagnements" class="cta-button">Travailler avec moi</a>
+
+    <!-- SECTION VERITE -->
+    <div class="section">
+        <h2>La vérité</h2>
+        <p>
+            Tu crois que tu es bloquée.
+            <br><br>
+            En réalité, tu évites une décision, une prise de conscience
+            ou une vérité que tu ne veux pas voir.
+            <br><br>
+            Et tant que tu ne la vois pas clairement, rien ne change.
+        </p>
+    </div>
+
+    <!-- SECTION OFFRES -->
+    <div class="section" id="accompagnements">
+        <h2>Les accompagnements</h2>
+
+        <div class="offers">
+
+            <div class="offer">
+                <h3>Clarté Radicale</h3>
+                <p>Identifier précisément ce qui te bloque et repartir avec une direction claire.</p>
+            </div>
+
+            <div class="offer">
+                <h3>Reprise de Direction</h3>
+                <p>Sortir du blocage, prendre des décisions et avancer concrètement.</p>
+            </div>
+
+            <div class="offer">
+                <h3>Alignement Radical</h3>
+                <p>Transformation profonde avec accompagnement intensif.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="section">
+        <a href="#contact" class="cta-button">Écris-moi</a>
+    </div>
 
 </body>
 </html>
