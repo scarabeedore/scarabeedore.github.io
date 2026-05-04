@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scarabée Doré | Haute Performance</title>
+    <style>
+        :root { --gold: #D4AF37; --black: #0a0a0a; }
+        body { margin: 0; background: var(--black); color: white; font-family: 'Georgia', serif; overflow-x: hidden; }
+
+        /* Background et Scarabée */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #1c1c1c 0%, #000 100%);
+            position: relative;
+        }
+
+        .scarab-icon {
+            font-size: 100px;
+            animation: fly 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px var(--gold));
+            cursor: pointer;
+        }
+
+        @keyframes fly {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        h1 {
+            color: var(--gold);
+            letter-spacing: 12px;
+            font-size: 3.5rem;
+            margin: 20px 0;
+            font-weight: 300;
+        }
+
+        /* Bouton Animé - Effet Or Brillant */
+        .btn-gold {
+            padding: 20px 50px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            background: transparent;
+            margin-top: 40px;
+            font-size: 0.8em;
+        }
+
+        .btn-gold:hover {
+            color: black;
+            background: var(--gold);
+            box-shadow: 0 0 50px var(--gold);
+            transform: translateY(-5px);
+        }
+
+        /* Prestations */
+        .services {
+            padding: 100px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            border: 1px solid #222;
+            padding: 50px;
+            text-align: center;
+            transition: 0.5s;
+            background: #0d0d0d;
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card h3 { color: var(--gold); letter-spacing: 2px; margin-bottom: 20px; }
+        .card p { line-height: 1.6; color: #aaa; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="scarab-icon">𓆣</div>
+        <h1>SCARABÉE DORÉ</h1>
+        <p style="font-style: italic; letter-spacing: 3px; color: #888;">L'ARCHITECTE DE VOTRE ALIGNEMENT</p>
+        <a href="#contact" class="btn-gold">Engager le diagnostic</a>
+    </section>
+
+    <div class="services">
+        <div class="card">
+            <h3>LE BLUEPRINT</h3>
+            <p>Structure décisionnelle et sécurisation de votre génie atypique.</p>
+        </div>
+        <div class="card">
+            <h3>LA ROADMAP</h3>
+            <p>Planification stratégique de vos cycles de performance sans épuisement.</p>
+        </div>
+        <div class="card">
+            <h3>LE FRAMEWORK</h3>
+            <p>Optimisation de votre héritage et de votre impact auprès de vos pairs.</p>
+        </div>
+    </div>
+
+</body>
+</html>
