@@ -5,111 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scarabée Doré | Haute Performance</title>
     <style>
-        :root { --gold: #D4AF37; --black: #0a0a0a; }
-        body { margin: 0; background: var(--black); color: white; font-family: 'Georgia', serif; overflow-x: hidden; }
+        :root {
+            --gold: #D4AF37;
+            --rose: #FF69B4;
+            --black: #0a0a0a;
+            --white: #ffffff;
+        }
 
-        /* Background et Scarabée */
+        body {
+            margin: 0;
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION DYNAMIQUE --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.9);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* Cercle qui bouge au survol */
+        nav a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+        }
+
+        nav a:hover::before {
+            width: 40px;
+            height: 40px;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Couleurs spécifiques demandées */
+        nav a:nth-child(1):hover { color: var(--rose); } /* Accueil */
+        nav a:nth-child(2):hover { color: var(--gold); } /* Accompagnements */
+        nav a:nth-child(3):hover { color: #00BFFF; }    /* À propos */
+        nav a:nth-child(4):hover { color: #ADFF2F; }    /* Insights */
+        nav a:nth-child(5):hover { color: #FFD700; }    /* Contact */
+
+        /* --- SECTION VIDEO (HERO) --- */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            background: radial-gradient(circle, #1c1c1c 0%, #000 100%);
-            position: relative;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
         }
 
-        .scarab-icon {
-            font-size: 100px;
-            animation: fly 4s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px var(--gold));
-            cursor: pointer;
+        .video-container {
+            width: 300px; /* Taille de ton scarabée animé */
+            margin-bottom: 20px;
         }
 
-        @keyframes fly {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.1); }
+        video {
+            width: 100%;
+            filter: drop-shadow(0 0 15px var(--gold));
         }
 
         h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
             color: var(--gold);
-            letter-spacing: 12px;
-            font-size: 3.5rem;
-            margin: 20px 0;
-            font-weight: 300;
         }
 
-        /* Bouton Animé - Effet Or Brillant */
-        .btn-gold {
-            padding: 20px 50px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            background: transparent;
-            margin-top: 40px;
-            font-size: 0.8em;
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            max-width: 600px;
         }
 
-        .btn-gold:hover {
-            color: black;
-            background: var(--gold);
-            box-shadow: 0 0 50px var(--gold);
-            transform: translateY(-5px);
-        }
-
-        /* Prestations */
-        .services {
-            padding: 100px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
+        /* --- SECTIONS DE CONTENU --- */
+        section {
+            padding: 80px 10%;
+            max-width: 1000px;
             margin: auto;
         }
 
-        .card {
-            border: 1px solid #222;
-            padding: 50px;
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .grid-offers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .offer-card {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px;
             text-align: center;
-            transition: 0.5s;
-            background: #0d0d0d;
+            transition: 0.3s;
         }
 
-        .card:hover {
+        .offer-card:hover {
             border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: rgba(212, 175, 55, 0.05);
         }
 
-        .card h3 { color: var(--gold); letter-spacing: 2px; margin-bottom: 20px; }
-        .card p { line-height: 1.6; color: #aaa; }
+        .highlight {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="scarab-icon">𓆣</div>
-        <h1>SCARABÉE DORÉ</h1>
-        <p style="font-style: italic; letter-spacing: 3px; color: #888;">L'ARCHITECTE DE VOTRE ALIGNEMENT</p>
-        <a href="#contact" class="btn-gold">Engager le diagnostic</a>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#accompagnements">Accompagnements</a>
+        <a href="#propos">À propos</a>
+        <a href="#insights">Insights</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero" id="accueil">
+        <div class="video-container">
+            <!-- ICI : Remplace "video.mp4" par le nom exact de ton fichier vidéo sur GitHub -->
+            <video autoplay loop muted playsinline>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <h1>Tu n’es pas bloquée par hasard.</h1>
+        <p class="subtitle">Tu es bloquée parce que tu ne vois pas encore ce qui te retient.</p>
+        <a href="#accompagnements" class="cta-button">Travailler avec moi</a>
+    </div>
+
+    <section id="probleme">
+        <h2 class="highlight">Pourquoi rien ne bouge ?</h2>
+        <ul>
+            <li>Tu te sens bloquée.</li>
+            <li>Tu réfléchis mais rien ne change.</li>
+            <li>Tu sais que quelque chose doit bouger.</li>
+            <li>Mais tu restes au même point.</li>
+        </ul>
+        <p>Ce n’est pas un manque de capacité. <span class="highlight">C’est un manque de lucidité</span> sur ce qui te bloque.</p>
     </section>
 
-    <div class="services">
-        <div class="card">
-            <h3>LE BLUEPRINT</h3>
-            <p>Structure décisionnelle et sécurisation de votre génie atypique.</p>
+    <section id="accompagnements">
+        <h2 class="highlight">Mes Accompagnements</h2>
+        <p>Je ne travaille pas avec tout le monde. J’accompagne les femmes prêtes à changer réellement.</p>
+        
+        <div class="grid-offers">
+            <div class="offer-card">
+                <h3>Clarté Radicale</h3>
+                <p>Résultat : Lucidité immédiate.</p>
+                <a href="#contact" class="cta-button">Réserver</a>
+            </div>
+            <div class="offer-card" style="border-width: 2px; border-color: var(--gold);">
+                <h3>Reprise de Direction</h3>
+                <p>La transformation profonde.</p>
+                <a href="#contact" class="cta-button">Postuler</a>
+            </div>
+            <div class="offer-card">
+                <h3>Alignement Radical</h3>
+                <p>Accompagnement VIP.</p>
+                <a href="#contact" class="cta-button">Candidater</a>
+            </div>
         </div>
-        <div class="card">
-            <h3>LA ROADMAP</h3>
-            <p>Planification stratégique de vos cycles de performance sans épuisement.</p>
+    </section>
+
+    <section id="contact">
+        <h2 class="highlight">Prête à avancer ?</h2>
+        <p>Si tu es prête à arrêter de tourner en rond :</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <a href="mailto:tonemail@exemple.com" class="cta-button">Email</a>
+            <a href="https://wa.me/tonnumero" class="cta-button">WhatsApp</a>
         </div>
-        <div class="card">
-            <h3>LE FRAMEWORK</h3>
-            <p>Optimisation de votre héritage et de votre impact auprès de vos pairs.</p>
-        </div>
-    </div>
+    </section>
 
 </body>
 </html>
