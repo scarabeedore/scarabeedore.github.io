@@ -1,27 +1,252 @@
-<section id="contact" aria-labelledby="contact-title">
-  <div class="contact-inner">
-    <p class="contact-eyebrow">Premier échange</p>
-    <h2 id="contact-title">Vous pouvez commencer par une question.</h2>
-    <p class="contact-lead">
-      Quelques lignes suffisent pour me dire où vous en êtes, ce que vous avez
-      traversé, ce que vous avez déjà essayé et ce que vous aimeriez enfin
-      éclaircir. Vous n'avez pas besoin de tout formuler parfaitement.
-    </p>
-    <a class="btn-primary"
-       href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20Scarab%C3%A9e%20Dor%C3%A9&body=Bonjour%20Sandra%2C%0A%0AJe%20vous%20%C3%A9cris%20suite%20%C3%A0%20la%20lecture%20de%20votre%20site.%0A%0AO%C3%B9%20j'en%20suis%20aujourd'hui%20%3A%20%0ACe%20que%20j'aimerais%20%C3%A9claircir%20%3A%20%0A%0A%C3%80%20bient%C3%B4t%2C">
-      Écrire à Sandra
-    </a>
-    <p class="contact-fallback">
-      Ou écrivez-moi directement à
-      <button type="button" class="copy-email"
-              data-email="sandra.duarte79@gmail.com"
-              aria-label="Copier l'adresse email sandra.duarte79@gmail.com">
-        sandra.duarte79@gmail.com
-      </button>
-      (cliquez pour copier).
-    </p>
-    <p class="contact-note">
-      Réponse et modalités communiquées avant tout engagement.
-    </p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scarabée Doré — Astrologie chinoise & numérologie</title>
+  <meta name="description" content="Accompagnement en astrologie chinoise et numérologie. Un premier échange pour éclaircir où vous en êtes, sans engagement.">
+  <meta property="og:title" content="Scarabée Doré — Astrologie chinoise & numérologie">
+  <meta property="og:description" content="Un premier échange pour éclaircir où vous en êtes, sans engagement.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <style>
+    :root {
+      --color-bg: #faf8f4;
+      --color-text: #1a1a1a;
+      --color-muted: #4a4a4a;
+      --color-accent: #8a6d2f;
+      --color-dark: #222;
+      --max-width: 720px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--color-accent); }
+    a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* --- En-tête --- */
+    header.site-header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e8e2d6;
+    }
+    .site-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.75rem);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      margin: 0 auto;
+      max-width: 560px;
+    }
+
+    /* --- Section générique --- */
+    section { padding: 3rem 0; }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin: 0 0 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+
+    /* --- Section contact --- */
+    #contact { background: #f3efe7; }
+    .contact-inner { max-width: 640px; margin: 0 auto; }
+    .contact-lead { font-size: 1.05rem; color: #333; margin: 0 0 1.5rem; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-dark);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: background 0.2s ease;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus-visible { background: #000; }
+    .btn-primary:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .contact-fallback {
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+    .copy-email {
+      background: none;
+      border: none;
+      color: inherit;
+      text-decoration: underline;
+      cursor: pointer;
+      font: inherit;
+      padding: 0;
+    }
+    .copy-email:hover,
+    .copy-email:focus-visible { color: var(--color-accent); }
+    .copy-email:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    .contact-note {
+      margin: 1rem 0 0;
+      font-size: 0.85rem;
+      color: #5a5a5a;
+    }
+
+    /* --- Pied de page --- */
+    footer.site-footer {
+      padding: 2rem 0;
+      border-top: 1px solid #e8e2d6;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      text-align: center;
+    }
+    footer.site-footer a { color: var(--color-muted); }
+    footer.site-footer a:hover { color: var(--color-accent); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-primary { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-brand">Scarabée Doré</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO : remplacez ce texte par le vôtre si besoin -->
+    <section class="hero">
+      <div class="container">
+        <h1>Éclaircir votre chemin, avec l'astrologie chinoise et la numérologie.</h1>
+        <p>Un accompagnement pour comprendre où vous en êtes, ce que vous avez traversé, et ce que vous aimeriez enfin éclaircir.</p>
+      </div>
+    </section>
+
+    <!-- PRÉSENTATION : remplacez ce texte par le vôtre si besoin -->
+    <section id="presentation">
+      <div class="container">
+        <p class="eyebrow">À propos</p>
+        <h2>Un regard différent sur votre parcours.</h2>
+        <p>
+          L'astrologie chinoise et la numérologie ne prédisent pas l'avenir :
+          elles offrent un autre éclairage sur ce que vous vivez. Mon rôle est
+          de vous aider à mettre des mots sur votre situation, sans jugement
+          et sans pression.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT (votre contenu, amélioré) -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner">
+        <p class="eyebrow">Premier échange</p>
+        <h2 id="contact-title">Vous pouvez commencer par une question.</h2>
+        <p class="contact-lead">
+          Quelques lignes suffisent pour me dire où vous en êtes, ce que vous
+          avez traversé, ce que vous avez déjà essayé et ce que vous aimeriez
+          enfin éclaircir. Vous n'avez pas besoin de tout formuler parfaitement.
+        </p>
+
+        <a class="btn-primary"
+           href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20Scarab%C3%A9e%20Dor%C3%A9&body=Bonjour%20Sandra%2C%0A%0AJe%20vous%20%C3%A9cris%20suite%20%C3%A0%20la%20lecture%20de%20votre%20site.%0A%0AO%C3%B9%20j'en%20suis%20aujourd'hui%20%3A%20%0ACe%20que%20j'aimerais%20%C3%A9claircir%20%3A%20%0A%0A%C3%80%20bient%C3%B4t%2C">
+          Écrire à Sandra
+        </a>
+
+        <p class="contact-fallback">
+          Ou écrivez-moi directement à
+          <button type="button" class="copy-email"
+                  data-email="sandra.duarte79@gmail.com"
+                  aria-label="Copier l'adresse email sandra.duarte79@gmail.com">
+            sandra.duarte79@gmail.com
+          </button>
+          (cliquez pour copier).
+        </p>
+
+        <p class="contact-note">
+          Réponse et modalités communiquées avant tout engagement.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © <span id="year">2026</span> Scarabée Doré ·
+        <a href="mentions-legales.html">Mentions légales</a> ·
+        <a href="confidentialite.html">Confidentialité</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Année automatique dans le pied de page
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Bouton "copier l'email" avec repli si l'API clipboard n'est pas dispo
+    document.querySelectorAll('.copy-email').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var email = btn.dataset.email;
+        navigator.clipboard.writeText(email).then(function () {
+          var original = btn.textContent;
+          btn.textContent = 'Adresse copiée !';
+          setTimeout(function () { btn.textContent = original; }, 2000);
+        }).catch(function () {
+          window.prompt('Copiez cette adresse :', email);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
