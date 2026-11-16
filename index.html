@@ -1,151 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scarabée Doré | Haute Performance & Transformation</title>
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #0a0a0a;
-            --white: #ffffff;
-            --grey: #1a1a1a;
-        }
-
-        body {
-            margin: 0;
-            background-color: var(--black);
-            color: var(--white);
-            font-family: 'Georgia', serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* EFFET REVEAL (SCROLL) */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* HEADER & NAV */
-        .header { margin-top: 60px; display: flex; align-items: center; gap: 20px; padding: 0 20px; }
-        .logo { width: 60px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.4)); }
-        h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--gold); margin: 0; }
-        h2 { color: var(--gold); font-size: 1.8rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
-
-        nav { display: flex; gap: 15px; margin: 40px 0; flex-wrap: wrap; justify-content: center; }
-        nav a { color: var(--white); text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; position: relative; padding: 5px; }
-        nav a::after { content: ""; position: absolute; width: 0; height: 1px; background: var(--gold); left: 0; bottom: 0; transition: 0.3s; }
-        nav a:hover::after { width: 100%; }
-
-        /* VIDEO & CTA */
-        .video-container { width: 120px; margin-bottom: 40px; }
-        video { width: 100%; border-radius: 12px; filter: drop-shadow(0 0 20px rgba(212,175,55,0.3)); }
-        .cta-button { display: inline-block; padding: 15px 35px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; transition: 0.4s; font-weight: bold; margin: 20px 0; }
-        .cta-button:hover { background: var(--gold); color: var(--black); box-shadow: 0 0 20px rgba(212,175,55,0.4); }
-
-        /* SECTIONS GÉNÉRALES */
-        .section { max-width: 900px; padding: 100px 20px; border-bottom: 1px solid rgba(212,175,55,0.1); width: 100%; box-sizing: border-box; }
-
-        /* GRILLE DE FORMATIONS & BLOG */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        
-        .card { background: var(--grey); border: 1px solid rgba(212,175,55,0.1); padding: 30px; border-radius: 15px; transition: 0.4s; text-align: left; }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
-        .card h3 { color: var(--gold); margin-top: 0; }
-        .card p { font-size: 0.9rem; opacity: 0.8; }
-
-        /* PORTFOLIO / BLOG STYLÉ */
-        .blog-post { position: relative; overflow: hidden; border-radius: 15px; height: 250px; background: linear-gradient(45deg, #1a1a1a, #000); display: flex; align-items: flex-end; padding: 20px; text-decoration: none; border: 1px solid rgba(212,175,55,0.1); }
-        .blog-post:hover { border-color: var(--gold); }
-        .blog-post h3 { color: var(--white); font-size: 1.1rem; margin: 0; text-shadow: 2px 2px 4px #000; }
-        .tag { position: absolute; top: 20px; right: 20px; background: var(--gold); color: var(--black); padding: 5px 10px; font-size: 0.6rem; font-weight: bold; text-transform: uppercase; border-radius: 5px; }
-
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scarabée Doré accompagne les parcours professionnels atypiques avec ÉLYSCA : comprendre son parcours, explorer des pistes et décider à partir d'éléments concrets.">
+  <meta name="theme-color" content="#11100e">
+  <title>Scarabée Doré — Comprendre avant de choisir</title>
+  <link rel="icon" type="image/png" href="assets/scarabee-icon.png">
+  <style>
+    :root{--ink:#11100e;--ink2:#1b1916;--paper:#f3eee4;--paper2:#e8dfd0;--gold:#c9a45a;--gold2:#e2c887;--muted:#b8afa1;--line:rgba(201,164,90,.28);--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.7}a{color:inherit}.shell{width:min(1160px,calc(100% - 44px));margin:auto}.eyebrow{color:var(--gold2);font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;font-weight:700}.gold{color:var(--gold2)}.serif{font-family:var(--serif)}
+    header{position:sticky;top:0;z-index:50;background:rgba(17,16,14,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,164,90,.16)}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;white-space:nowrap}.brand img{width:42px;height:42px;object-fit:contain}.brand strong{font:600 1.4rem var(--serif);letter-spacing:.04em}.nav-links{display:flex;align-items:center;gap:23px;font-size:.76rem;color:var(--muted)}.nav-links a{text-decoration:none}.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold2)}.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border:1px solid var(--gold);color:var(--gold2);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;font-weight:700;transition:background .2s,color .2s,transform .2s}.nav-cta:hover,.button:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px)}.button.filled{background:var(--gold);color:var(--ink)}.button.filled:hover{background:var(--gold2)}.menu-toggle{display:none;background:transparent;color:var(--gold2);border:1px solid var(--line);padding:10px 12px;font:600 .75rem var(--sans);letter-spacing:.08em;text-transform:uppercase}
+    .hero{position:relative;overflow:hidden;padding:105px 0 112px}.hero:before{content:'';position:absolute;width:640px;height:640px;border:1px solid rgba(201,164,90,.13);border-radius:50%;right:-250px;top:-200px;box-shadow:0 0 0 32px rgba(201,164,90,.025),0 0 0 66px rgba(201,164,90,.018)}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:66px;align-items:center;position:relative}.hero h1{font:500 clamp(3.25rem,6.4vw,6.1rem)/.94 var(--serif);letter-spacing:-.035em;margin:24px 0;max-width:760px}.hero-copy{max-width:680px;color:#d1c8bc;font-size:1.08rem}.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.hero-note{margin-top:21px;color:var(--muted);font-size:.78rem;max-width:610px}.seal{min-height:410px;display:grid;place-items:center;position:relative}.seal:before,.seal:after{content:'';position:absolute;border:1px solid var(--line);border-radius:50%;inset:30px}.seal:after{inset:72px;border-color:rgba(201,164,90,.2)}.seal img{position:relative;width:min(270px,72%);filter:drop-shadow(0 0 26px rgba(201,164,90,.2))}
+    section{padding:96px 0;border-top:1px solid rgba(201,164,90,.15)}h2{font:500 clamp(2.5rem,4.8vw,4rem)/1 var(--serif);margin:14px 0 18px;letter-spacing:-.02em}.section-heading{max-width:760px;margin-bottom:44px}.section-intro{color:#c9c0b3;font-size:1rem;max-width:720px}.manifesto{display:grid;grid-template-columns:.8fr 1.2fr;gap:62px;align-items:start}.manifesto blockquote{font:500 clamp(2rem,3.8vw,3.45rem)/1.08 var(--serif);margin:0;color:var(--gold2)}.manifesto p{color:#c9c0b3;margin:0 0 15px}.manifesto strong{color:var(--paper)}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}.step{background:var(--ink2);padding:24px 19px;min-height:205px}.step-letter{font:500 2.25rem var(--serif);color:var(--gold2)}.step h3{font-size:.96rem;margin:8px 0;color:var(--paper)}.step p{font-size:.82rem;color:var(--muted);margin:0}
+    .proof-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}.proof{padding:22px 23px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(201,164,90,.07),transparent)}.proof strong{display:block;color:var(--gold2);font:600 1.45rem var(--serif);margin-bottom:5px}.proof span{font-size:.83rem;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{display:flex;flex-direction:column;padding:28px;background:var(--ink2);border:1px solid rgba(201,164,90,.22);min-height:330px}.card.featured{border-color:var(--gold);background:linear-gradient(145deg,rgba(201,164,90,.13),var(--ink2) 58%)}.card h3{font:600 1.95rem/1.05 var(--serif);color:var(--gold2);margin:17px 0 10px}.card p{color:#c9c0b3;font-size:.88rem}.card ul{padding-left:18px;color:var(--muted);font-size:.82rem}.card .button{align-self:flex-start;margin-top:auto}.small-note{font-size:.78rem;color:var(--muted);margin-top:22px}
+    .about{background:var(--paper);color:var(--ink)}.about .section-intro,.about p{color:#4c463e}.about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:62px;align-items:center}.about-mark{min-height:320px;display:grid;place-items:center;border:1px solid rgba(132,102,44,.35);background:radial-gradient(circle,rgba(201,164,90,.22),transparent 65%)}.about-mark img{width:min(220px,65%);filter:drop-shadow(0 8px 16px rgba(80,55,12,.16))}.about h2{color:var(--ink)}.about .eyebrow{color:#84662c}.about p{margin:0 0 14px}.about .button{color:#71551f;border-color:#9e792f}.about .button:hover{background:#9e792f;color:white}
+    .book-feature{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}.book-feature p{color:#c9c0b3;max-width:690px}.book-cover{min-height:385px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#d8b86b,#8d6726 48%,#2a2115);border:1px solid var(--gold2);box-shadow:15px 15px 0 rgba(201,164,90,.1);color:var(--ink)}.book-cover span{font-size:.68rem;letter-spacing:.2em;font-weight:700}.book-cover strong{font:600 clamp(2.7rem,4.5vw,4.4rem)/.85 var(--serif)}.book-cover small{max-width:270px;font-size:.78rem;line-height:1.5}
+    .lenses{background:var(--paper);color:var(--ink)}.lenses h2{color:var(--ink)}.lenses .section-intro,.lenses p{color:#4c463e}.lenses-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.lens-list{display:grid}.lens{border-top:1px solid rgba(17,16,14,.2);padding:17px 0;display:grid;grid-template-columns:150px 1fr;gap:18px}.lens strong{color:#84662c}.lens span{font-size:.88rem}.disclaimer{margin-top:24px;padding:17px;border-left:3px solid #9e792f;background:rgba(201,164,90,.12);font-size:.8rem}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq article{border-top:1px solid var(--line);padding:20px 0}.faq h3{font:600 1.45rem var(--serif);color:var(--gold2);margin:0 0 7px}.faq p{color:#c9c0b3;font-size:.86rem;margin:0}.final-cta{text-align:center;padding:115px 0;background:radial-gradient(circle at center,rgba(201,164,90,.12),transparent 45%)}.final-cta p{max-width:650px;margin:0 auto 27px;color:#c9c0b3}.final-cta .eyebrow{margin-bottom:8px}.contact-line{font-size:.82rem;color:var(--muted);margin-top:17px}.legal-summary{background:var(--ink2)}.legal-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.legal-notes p{margin:0;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}.legal-notes strong{display:block;color:var(--gold2);margin-bottom:8px}.legal-notes a{color:var(--gold2)}footer{border-top:1px solid var(--line);padding:28px 0 38px;color:var(--muted);font-size:.73rem}.footer-line{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{color:var(--muted)}
+    @media(max-width:900px){.hero-grid,.manifesto,.about-grid,.lenses-grid,.book-feature{grid-template-columns:1fr;gap:34px}.seal{min-height:290px;order:-1}.steps{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr 1fr}.nav-links{gap:13px}.nav-links a{font-size:.7rem}}
+    @media(max-width:680px){.shell{width:min(100% - 30px,1160px)}.nav{min-height:70px}.brand img{width:36px;height:36px}.brand strong{font-size:1.22rem}.menu-toggle{display:inline-flex}.nav-cta{display:none}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#171512;border-bottom:1px solid var(--line);padding:14px 22px 20px;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 4px;border-bottom:1px solid rgba(201,164,90,.12);font-size:.82rem}.hero{padding:64px 0 76px}.hero-grid{gap:10px}.hero h1{font-size:clamp(3.15rem,14vw,4.5rem)}.seal{min-height:235px}.seal:before{inset:18px 40px}.seal:after{inset:47px 68px}.seal img{width:170px}.hero-copy{font-size:.98rem}.hero-actions{flex-direction:column;align-items:stretch}.button{width:100%;text-align:center}.steps,.cards,.proof-strip,.faq,.legal-notes{grid-template-columns:1fr}section{padding:72px 0}.step{min-height:0}.lens{grid-template-columns:1fr;gap:4px}.book-cover{min-height:320px}.final-cta{padding:82px 0}.footer-line{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
 </head>
 <body>
-
-    <div class="header reveal">
-        <h1>Tu n’es pas bloquée par hasard.</h1>
-    </div>
-
-    <nav class="reveal">
-        <a href="#">Accueil</a>
-        <a href="#accompagnements">Coaching</a>
-        <a href="#formations">Formations</a>
-        <a href="#portfolio">Journal</a>
-        <a href="mailto:tonemail@gmail.com">Postuler</a>
+<header>
+  <div class="shell nav">
+    <a class="brand" href="#accueil" aria-label="Scarabée Doré, accueil"><img src="assets/scarabee-icon.png" alt=""><strong>Scarabée Doré</strong></a>
+    <nav class="nav-links" id="navigation-principale" aria-label="Navigation principale">
+      <a href="#methode">ÉLYSCA</a><a href="#accompagnements">Accompagnements</a><a href="#formations">Formations</a><a href="#livre">Le livre</a><a href="#apropos">À propos</a>
     </nav>
-
-    <div class="video-container reveal">
-        <video autoplay loop muted playsinline>
-            <source src="video.mp4" type="video/mp4">
-        </video>
+    <a class="nav-cta" href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20Scarab%C3%A9e%20Dor%C3%A9">Premier échange</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-principale">Menu</button>
+  </div>
+</header>
+<main>
+  <section class="hero" id="accueil">
+    <div class="shell hero-grid">
+      <div>
+        <div class="eyebrow">Scarabée Doré · Accompagnement & méthode ÉLYSCA</div>
+        <h1>Votre parcours n'est pas à réparer.<br><span class="gold">Il mérite d'être compris.</span></h1>
+        <p class="hero-copy">J'accompagne les personnes qui ont beaucoup vécu, changé, recommencé ou longtemps tenu bon à relire leur histoire, retrouver leurs points d'appui et avancer vers une piste professionnelle qui leur ressemble vraiment.</p>
+        <div class="hero-actions"><a class="button filled" href="#accompagnements">Découvrir les accompagnements</a><a class="button" href="#methode">Comprendre ÉLYSCA</a></div>
+        <p class="hero-note">Ici, pas de réponse toute faite ni de métier désigné par un test : un espace de profondeur, de méthode et d'essais concrets pour avancer sans vous trahir.</p>
+      </div>
+      <div class="seal"><img src="assets/scarabee-icon.png" alt="Emblème doré de Scarabée Doré"></div>
     </div>
+  </section>
 
-    <div class="section reveal" id="formations">
-        <h2>Formations & Transmissions</h2>
-        <p>Des programmes en autonomie pour celles qui veulent avancer à leur rythme.</p>
-        <div class="grid">
-            <div class="card">
-                <div style="font-size: 2rem; margin-bottom: 15px;">💎</div>
-                <h3>L'Architecture de la Clarté</h3>
-                <p>Maîtriser tes mécanismes de blocage pour ne plus jamais subir tes cycles d'auto-sabotage.</p>
-                <a href="#" class="cta-button" style="padding: 10px 20px; font-size: 0.6rem;">Découvrir</a>
-            </div>
-            <div class="card">
-                <div style="font-size: 2rem; margin-bottom: 15px;">🔥</div>
-                <h3>Puissance Mentale</h3>
-                <p>Développer une psychologie de haute performance sans sacrifier ton intuition.</p>
-                <a href="#" class="cta-button" style="padding: 10px 20px; font-size: 0.6rem;">En savoir plus</a>
-            </div>
-        </div>
+  <section id="methode">
+    <div class="shell">
+      <div class="manifesto">
+        <blockquote>« Vous n'avez pas à devenir quelqu'un d'autre pour trouver votre place. »</blockquote>
+        <div><div class="eyebrow">La méthode signature</div><h2>Comprendre avant de choisir.</h2><p>Quand un parcours comporte des changements, des détours ou des interruptions, il peut être difficile de distinguer ce qui relève d'une envie durable, d'une contrainte, d'une compétence déjà acquise ou d'une piste encore idéalisée.</p><p>ÉLYSCA propose un cadre pour relire ce parcours, faire émerger des possibilités et les confronter progressivement à la réalité. Vos détours, vos contradictions, vos périodes d'arrêt et vos intuitions ne sont pas des défauts à effacer : ils deviennent des informations à comprendre.</p><p>L'objectif n'est pas de vous faire entrer dans une case, mais de construire une décision qui tienne compte de votre histoire, de votre sensibilité et de votre situation réelle.</p></div>
+      </div>
+      <div class="steps" aria-label="Les cinq mouvements de la démarche ÉLYSCA">
+        <article class="step"><span class="step-letter">C</span><h3>La carapace</h3><p>Comprendre ce qui vous a construit, protégé et parfois limité.</p></article>
+        <article class="step"><span class="step-letter">M</span><h3>La mue</h3><p>Identifier les rôles, habitudes et injonctions qui ne vous conviennent plus.</p></article>
+        <article class="step"><span class="step-letter">É</span><h3>Les élytres</h3><p>Repérer vos compétences, vos ressources et vos points d'appui.</p></article>
+        <article class="step"><span class="step-letter">D</span><h3>Le déploiement</h3><p>Explorer des pistes et les confronter aux réalités concrètes.</p></article>
+        <article class="step"><span class="step-letter">E</span><h3>L'envol</h3><p>Choisir une prochaine étape et expérimenter à votre mesure.</p></article>
+      </div>
+      <div class="proof-strip">
+        <div class="proof"><strong>Approfondir</strong><span>Regarder sous les intitulés pour comprendre ce qui s'est réellement joué.</span></div>
+        <div class="proof"><strong>Discerner</strong><span>Distinguer les faits, les ressentis, les hypothèses et les informations manquantes.</span></div>
+        <div class="proof"><strong>Vous remettre en mouvement</strong><span>Construire une suite progressive, cohérente avec votre réalité et votre énergie disponible.</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="section reveal" id="portfolio">
-        <h2>Journal d'Insights</h2>
-        <p>Réflexions, études de cas et pensées brutes sur la performance et l'alignement.</p>
-        <div class="grid">
-            <a href="#" class="blog-post">
-                <span class="tag">Mental</span>
-                <h3>Pourquoi l'analyse tue ton action.</h3>
-            </a>
-            <a href="#" class="blog-post">
-                <span class="tag">Cas Client</span>
-                <h3>De 0 à la clarté totale en 48h.</h3>
-            </a>
-            <a href="#" class="blog-post">
-                <span class="tag">Vision</span>
-                <h3>Le luxe d'être soi-même.</h3>
-            </a>
-        </div>
-        <a href="#" class="cta-button" style="margin-top: 50px;">Lire tout le journal</a>
+  <section id="accompagnements">
+    <div class="shell">
+      <div class="section-heading"><div class="eyebrow">Accompagnements individuels</div><h2>Commencer là où vous en êtes.</h2><p class="section-intro">Vous pouvez arriver avec du flou, une fatigue, plusieurs idées ou simplement le sentiment de ne plus savoir par où commencer. Un premier échange permet de poser les choses sans avoir à présenter un parcours parfait.</p></div>
+      <div class="cards">
+        <article class="card"><div class="eyebrow">01 · Clarifier</div><h3>Point de départ</h3><p>Une séance pour poser la question qui se cache derrière votre blocage, faire le tri dans la situation et identifier une première action utile.</p><ul><li>90 minutes à distance</li><li>Clarification de votre situation</li><li>Question d'enquête et prochaine étape</li></ul><a class="button" href="mailto:sandra.duarte79@gmail.com?subject=S%C3%A9ance%20Point%20de%20d%C3%A9part">Demander cette séance</a></article>
+        <article class="card featured"><div class="eyebrow">02 · Explorer en profondeur</div><h3>Parcours ÉLYSCA</h3><p>Un accompagnement approfondi pour relier votre parcours à plusieurs pistes professionnelles, les documenter et préparer une décision argumentée.</p><ul><li>8 à 10 semaines à distance</li><li>Cartographie, enquête et expérimentations</li><li>Dossier de décision personnalisé</li></ul><a class="button filled" href="mailto:sandra.duarte79@gmail.com?subject=Parcours%20%C3%89LYSCA">Échanger sur le parcours</a></article>
+        <article class="card"><div class="eyebrow">03 · Examiner une piste</div><h3>Séance Réalité</h3><p>Une séance ciblée pour examiner une piste ou un choix précis, repérer ce qui reste à vérifier et définir un test proportionné.</p><ul><li>90 minutes à distance</li><li>Analyse d'une piste ou d'un choix</li><li>Plan de vérification concret</li></ul><a class="button" href="mailto:sandra.duarte79@gmail.com?subject=S%C3%A9ance%20R%C3%A9alit%C3%A9">Demander cette séance</a></article>
+      </div>
+      <p class="small-note">Les modalités et le tarif sont précisés avant tout engagement, lors du premier échange.</p>
     </div>
+  </section>
 
-    <div class="section reveal">
-        <h2>Passer à l'action</h2>
-        <p>Ne reste pas une spectatrice de ta propre vie.</p>
-        <a href="mailto:tonemail@gmail.com" class="cta-button">Prendre rendez-vous</a>
+  <section id="formations">
+    <div class="shell">
+      <div class="section-heading"><div class="eyebrow">Formations & transmission</div><h2>Faire circuler une méthode de réflexion.</h2><p class="section-intro">Des formats de transmission autour de l'analyse des parcours, de l'exploration professionnelle et des outils ÉLYSCA.</p></div>
+      <div class="cards">
+        <article class="card featured"><div class="eyebrow">Formation signature</div><h3>Comprendre et pratiquer ÉLYSCA</h3><p>Découvrir une démarche pour observer un parcours, distinguer les faits des hypothèses, documenter une piste et préparer une expérimentation.</p><ul><li>Parcours atypiques et non linéaires</li><li>Outils de la carapace, de la mue et des élytres</li><li>Études de cas et dossier de décision</li></ul><a class="button filled" href="mailto:sandra.duarte79@gmail.com?subject=Programme%20formation%20%C3%89LYSCA">Recevoir les informations</a></article>
+        <article class="card"><div class="eyebrow">Atelier pratique</div><h3>Choisir sans repartir de zéro</h3><p>Un atelier guidé autour de la relecture du parcours, des compétences transférables et de la construction d'une première expérimentation.</p><ul><li>Format collectif à distance</li><li>Exercices de réflexion</li><li>Groupe à taille humaine</li></ul><a class="button" href="mailto:sandra.duarte79@gmail.com?subject=Atelier%20Choisir%20sans%20repartir%20de%20z%C3%A9ro">Manifester mon intérêt</a></article>
+        <article class="card"><div class="eyebrow">Pour les professionnels</div><h3>Accompagner les parcours atypiques</h3><p>Un format de sensibilisation pour les accompagnants qui souhaitent questionner les parcours multiples sans les réduire à une étiquette.</p><ul><li>Repères et posture</li><li>Analyse de situations</li><li>Outils mobilisables en accompagnement</li></ul><a class="button" href="mailto:sandra.duarte79@gmail.com?subject=Formation%20parcours%20atypiques">Demander les informations</a></article>
+      </div>
     </div>
+  </section>
 
-    <div style="margin-bottom: 100px;"></div>
+  <section id="livre">
+    <div class="shell book-feature">
+      <div><div class="eyebrow">Le livre</div><h2>Choisir sans repartir de zéro</h2><p class="section-intro">Vous avez changé de voie, bifurqué, interrompu ou recommencé plusieurs fois ? Votre parcours contient peut-être déjà des ressources que vous n'avez pas encore reliées entre elles.</p><p>Ce livre propose un chemin de réflexion pour relire votre expérience, repérer ce qui peut être transféré et construire une suite en tenant compte de votre histoire, de vos contraintes et du réel.</p><a class="button filled" href="mailto:sandra.duarte79@gmail.com?subject=Informations%20sur%20le%20livre">Demander des informations sur le livre</a></div>
+      <div class="book-cover" role="img" aria-label="Présentation typographique du livre Choisir sans repartir de zéro"><span>SCARABÉE DORÉ</span><strong>Choisir<br>sans repartir<br>de zéro</strong><small>Relire son parcours pour construire la suite à partir de ce qui existe déjà.</small></div>
+    </div>
+  </section>
 
-    <script>
-        const reveals = document.querySelectorAll(".reveal");
-        const revealOnScroll = () => {
-            reveals.forEach((el) => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add("active");
-                }
-            });
-        };
-        window.addEventListener("scroll", revealOnScroll);
-        window.addEventListener("load", revealOnScroll);
-    </script>
+  <section class="about" id="apropos">
+    <div class="shell about-grid">
+      <div class="about-mark"><img src="assets/scarabee-icon.png" alt="Emblème Scarabée Doré"></div>
+      <div><div class="eyebrow">À propos</div><h2>Une présence calme pour les histoires complexes.</h2><p>Je suis Sandra Duarte, fondatrice de Scarabée Doré et conceptrice de la démarche ÉLYSCA.</p><p>J'ai choisi de créer un cadre qui ne cherche pas à simplifier artificiellement les parcours. Je préfère les questions justes aux réponses rapides, les faits aux étiquettes et les petits essais aux décisions prises sous pression.</p><p>Ma façon d'accompagner est à la fois attentive et exigeante : accueillir ce qui est vécu, mettre des mots sur ce qui se joue, relier les éléments et distinguer ce qui est établi de ce qui reste à explorer.</p><p>Je crois qu'une décision solide ne vient pas nécessairement d'une réponse immédiate. Elle se construit en avançant, avec méthode, courage et respect de sa réalité. Une erreur ou un détour peuvent devenir une source de discernement lorsqu'ils sont regardés avec honnêteté.</p><a class="button" href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20avec%20Sandra">Me contacter</a></div>
+    </div>
+  </section>
 
+  <section class="lenses" id="cadre">
+    <div class="shell lenses-grid">
+      <div><div class="eyebrow">Le cadre de travail</div><h2>Ce que vous ressentez mérite d'être entendu. Ce que vous choisissez mérite d'être vérifié.</h2><p class="section-intro">Votre ressenti peut contenir une information importante. Nous lui donnons une place, puis nous le confrontons aux faits, aux contraintes et à une expérience réelle.</p><div class="disclaimer">L'accompagnement proposé porte sur la réflexion et les choix professionnels. Il ne remplace pas un suivi médical, psychologique, juridique ou financier.</div></div>
+      <div class="lens-list">
+        <div class="lens"><strong>Les faits</strong><span>Ce qui s'est passé, ce qui est observable et ce qui peut être documenté.</span></div>
+        <div class="lens"><strong>Les ressentis</strong><span>Ce que vous vivez, ce qui vous attire, vous freine ou vous met en difficulté.</span></div>
+        <div class="lens"><strong>Les hypothèses</strong><span>Les interprétations et pistes possibles, qui restent à examiner.</span></div>
+        <div class="lens"><strong>Les vérifications</strong><span>Les informations à rechercher et les expériences à mener avant de décider.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="questions">
+    <div class="shell"><div class="section-heading"><div class="eyebrow">Questions fréquentes</div><h2>Avant de prendre contact.</h2></div>
+      <div class="faq">
+        <article><h3>Est-ce pour moi si je suis sensible ou atypique ?</h3><p>Oui, si vous cherchez un espace sérieux pour comprendre votre situation sans être réduit à une étiquette, un test ou un intitulé de poste.</p></article>
+        <article><h3>Les séances ont-elles lieu à distance ?</h3><p>Oui. Les formats individuels présentés ici sont proposés à distance.</p></article>
+        <article><h3>Dois-je déjà savoir ce que je veux faire ?</h3><p>Non. Le travail peut commencer par une situation floue, une question, une fatigue ou plusieurs pistes encore incertaines.</p></article>
+        <article><h3>Comment connaître les tarifs et disponibilités ?</h3><p>Écrivez-moi en présentant brièvement votre besoin. Je vous communiquerai les modalités avant tout engagement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="contact">
+    <div class="shell"><div class="eyebrow">Premier échange</div><h2>Vous pouvez commencer par une question.</h2><p>Quelques lignes suffisent pour me dire où vous en êtes, ce que vous avez traversé, ce que vous avez déjà essayé et ce que vous aimeriez enfin éclaircir. Vous n'avez pas besoin de tout formuler parfaitement.</p><a class="button filled" href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20Scarab%C3%A9e%20Dor%C3%A9">Écrire à Sandra</a><div class="contact-line">Réponse et modalités communiquées avant tout engagement.</div></div>
+  </section>
+  <section class="legal-summary" id="informations">
+    <div class="shell">
+      <div class="section-heading"><div class="eyebrow">Informations avant engagement</div><h2>Un premier échange n’est pas une commande.</h2><p class="section-intro">Ce site présente l’activité et les formats d’accompagnement de Scarabée Doré. Aucun paiement ni contrat n’est conclu directement sur cette page. Les tarifs, modalités, conditions d’exécution, conditions d’annulation et documents contractuels applicables sont communiqués avant tout engagement.</p></div>
+      <div class="legal-notes"><p><strong>Nature de l’accompagnement.</strong> Les prestations portent sur la réflexion et les choix professionnels. Elles ne constituent ni un acte médical, ni un suivi psychologique, ni une consultation juridique ou financière, et ne garantissent ni emploi, ni revenu, ni clientèle.</p><p><strong>Données personnelles.</strong> Le site ne comporte pas de formulaire, de paiement ni d’outil de mesure d’audience. Un message envoyé par e-mail contient uniquement les informations que vous choisissez de transmettre. Consultez la <a href="confidentialite.html">politique de confidentialité</a>.</p><p><strong>Informations légales.</strong> Consultez les <a href="mentions-legales.html">mentions légales</a> avant publication et complétez-les avec les informations exactes de l’entreprise, l’hébergeur, le SIRET, l’adresse professionnelle et, si nécessaire, le médiateur de la consommation.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="shell footer-line"><span>© 2026 Scarabée Doré — Sandra Duarte</span><span>ÉLYSCA · Observer · vérifier · décider</span><div class="footer-links"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="#informations">Informations avant engagement</a></div></div></footer>
+<script>
+  const menuButton = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('.nav-links');
+  menuButton.addEventListener('click', () => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    navigation.classList.toggle('open', !isOpen);
+    menuButton.textContent = isOpen ? 'Menu' : 'Fermer';
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navigation.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.textContent = 'Menu';
+  }));
+</script>
 </body>
 </html>
