@@ -1,20 +1,30 @@
-<section id="contact">
-    <div>
-      <div>
-        <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent, #c5a059); margin-bottom: 0.5rem;">Premier échange</div>
-        <h2>Vous pouvez commencer par une question.</h2>
-        <p>Quelques lignes suffisent pour me dire où vous en êtes, ce que vous avez traversé, ce que vous avez déjà essayé et ce que vous aimeriez enfin éclaircir. Vous n'avez pas besoin de tout formuler parfaitement.</p>
-        
-        <!-- Bouton principal pré-rempli -->
-        <a href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20Scarab%C3%A9e%20Dor%C3%A9&body=Bonjour%20Sandra%2C%0A%0AJe%20vous%20%C3%A9cris%20suite%20%C3%A0%20la%20lecture%20de%20votre%20site.%0A%0AO%C3%B9%20j'en%20suis%20aujourd'hui%20%3A%20%0ACe%20que%20j'aimerais%20%C3%A9claircir%20%3A%20%0A%0A%C3%80%20bient%C3%B4t%2C" style="display: inline-block; padding: 0.75rem 1.5rem; background: #222; color: #fff; text-decoration: none; border-radius: 4px; margin-top: 1rem;">Écrire à Sandra</a>
-        
-        <!-- Filet de sécurité anti-blocage mailto -->
-        <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-          Ou écrivez-moi directement à 
-          <button onclick="navigator.clipboard.writeText('sandra.duarte79@gmail.com'); this.innerText='Adresse copiée !'; setTimeout(()=>{this.innerText='sandra.duarte79@gmail.com'}, 2000);" style="background: none; border: none; color: inherit; text-decoration: underline; cursor: pointer; font-family: inherit; font-size: inherit; padding: 0;">sandra.duarte79@gmail.com</button> (cliquez pour copier).
-        </div>
+<section id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+    <p class="contact-eyebrow">Premier échange</p>
+    <h2 id="contact-title">Vous pouvez commencer par une question.</h2>
+    <p class="contact-lead">
+      Quelques lignes suffisent pour me dire où vous en êtes, ce que vous avez
+      traversé, ce que vous avez déjà essayé et ce que vous aimeriez enfin
+      éclaircir. Vous n'avez pas besoin de tout formuler parfaitement.
+    </p>
 
-        <div style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">Réponse et modalités communiquées avant tout engagement.</div>
-      </div>
-    </div>
-  </section>
+    <a class="btn-primary"
+       href="mailto:sandra.duarte79@gmail.com?subject=Premier%20%C3%A9change%20Scarab%C3%A9e%20Dor%C3%A9&body=Bonjour%20Sandra%2C%0A%0AJe%20vous%20%C3%A9cris%20suite%20%C3%A0%20la%20lecture%20de%20votre%20site.%0A%0AO%C3%B9%20j'en%20suis%20aujourd'hui%20%3A%20%0ACe%20que%20j'aimerais%20%C3%A9claircir%20%3A%20%0A%0A%C3%80%20bient%C3%B4t%2C">
+      Écrire à Sandra
+    </a>
+
+    <p class="contact-fallback">
+      Ou écrivez-moi directement à
+      <button type="button" class="copy-email"
+              data-email="sandra.duarte79@gmail.com"
+              aria-label="Copier l'adresse email sandra.duarte79@gmail.com">
+        sandra.duarte79@gmail.com
+      </button>
+      (cliquez pour copier).
+    </p>
+
+    <p class="contact-note">
+      Réponse et modalités communiquées avant tout engagement.
+    </p>
+  </div>
+</section>
